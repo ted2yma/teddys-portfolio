@@ -1,11 +1,28 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import {
+  Box,
+  Flex,
+  Text,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const bg = useColorModeValue("gray.50", "gray.900");
+  const textCol = useColorModeValue("gray.900", "gray.50");
+  let homeScopeStyle = {
+    bg: bg,
+    color: textCol,
+    transitionProperty: "background-color",
+    transitionDuration: "normal",
+    lineHeight: "base",
+  };
   return (
     <>
       <Head>
@@ -14,7 +31,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <Box as="main" sx={homeScopeStyle} className={styles.main}>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
@@ -26,7 +43,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -39,7 +56,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.center}>
+        <Flex className={styles.center} direction={`column`}>
           <Image
             className={styles.logo}
             src="/next.svg"
@@ -47,8 +64,12 @@ export default function Home() {
             width={180}
             height={37}
             priority
+            onClick={toggleColorMode}
           />
-        </div>
+          <Text as={`span`} mt={`2rem`}>
+            ColorMode: {colorMode}
+          </Text>
+        </Flex>
 
         <div className={styles.grid}>
           <a
@@ -108,7 +129,7 @@ export default function Home() {
             </p>
           </a>
         </div>
-      </main>
+      </Box>
     </>
-  )
+  );
 }
