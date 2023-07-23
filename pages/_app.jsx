@@ -1,12 +1,14 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import Head from "next/head";
 import { Router } from "next/router";
-import React, { useEffect, useState } from "react";
-// import Layout from "@/components/Layout";
+import React, { createContext, useEffect, useState } from "react";
+import Layout from "@/components/Layout";
 // import "../public/styles/style.scss";
 // import "../public/styles/radioToggle.scss";
 
-const App = ({ Component, pageProps, data }) => {
+export const GlobalProps = createContext();
+
+const App = ({ Component, pageProps }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
 
@@ -32,9 +34,9 @@ const App = ({ Component, pageProps, data }) => {
       </Head>
       <ChakraProvider>
         {/* {isLoading && <Loader />} */}
-        {/* <Layout navToggle={navToggle} setNavToggle={setNavToggle}> */}
-        <Component {...pageProps} />
-        {/* </Layout> */}
+        <Layout navToggle={navToggle} setNavToggle={setNavToggle}>
+          <Component {...pageProps} />
+        </Layout>
       </ChakraProvider>
     </>
   );

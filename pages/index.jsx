@@ -13,7 +13,7 @@ import {
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
   const bg = useColorModeValue("gray.50", "gray.900");
   const textCol = useColorModeValue("gray.900", "gray.50");
   let homeScopeStyle = {
@@ -23,6 +23,7 @@ export default function Home() {
     transitionDuration: "normal",
     lineHeight: "base",
   };
+
   return (
     <>
       <Head>
@@ -64,7 +65,6 @@ export default function Home() {
             width={180}
             height={37}
             priority
-            onClick={toggleColorMode}
           />
           <Text as={`span`} mt={`2rem`}>
             ColorMode: {colorMode}
