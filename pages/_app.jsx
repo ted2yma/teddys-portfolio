@@ -6,11 +6,12 @@ import Layout from "@/components/Layout";
 // import "../public/styles/style.scss";
 // import "../public/styles/radioToggle.scss";
 
-export const GlobalProps = createContext();
+export const GlobalCtx = createContext();
 
 const App = ({ Component, pageProps }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
+  const [dragging, setDragging] = useState(false);
 
   useEffect(() => {
     Router.events.on("routeChangeStart", (url) => {
@@ -34,9 +35,11 @@ const App = ({ Component, pageProps }) => {
       </Head>
       <ChakraProvider>
         {/* {isLoading && <Loader />} */}
-        <Layout navToggle={navToggle} setNavToggle={setNavToggle}>
-          <Component {...pageProps} />
-        </Layout>
+        <GlobalCtx.Provider value={{ dragging, setDragging }}>
+          <Layout navToggle={navToggle} setNavToggle={setNavToggle}>
+            <Component {...pageProps} />
+          </Layout>
+        </GlobalCtx.Provider>
       </ChakraProvider>
     </>
   );
