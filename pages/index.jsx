@@ -25,13 +25,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Teddy's Portfolio</title>
-        <meta name="description" content="Welcome to Teddy's Portfolio" />
+        <title>Teddy&apos;s Portfolio</title>
+        <meta name="description" content="Welcome to Teddy&apos;s Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box as="main" sx={homeScopeStyle} className={styles.main}>
-        <Text as="h1" fontSize={`3rem`} fontWeight={`bold`}>Oh dear! I'm upgrading my website, get back later!</Text>
+        <Text as="h1" fontSize={`3rem`} fontWeight={`bold`}>Oh dear! I&apos;m upgrading my website, get back later!</Text>
         <Text as="h1" fontSize={`1.5rem`} my={`1rem`}>唔好意思，你個網壞咗呀，轉頭再返嚟啦！</Text>
         <Text as="h1" fontSize={`2rem`}>網站更新中，稍後再回來吧！</Text>
       </Box>
