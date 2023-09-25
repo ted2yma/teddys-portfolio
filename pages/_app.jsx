@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Head from "next/head";
 import { Router } from "next/router";
 import React, { createContext, useEffect, useState } from "react";
-import Layout from "@/components/Layout";
+// import Layout from "@/components/Layout";
 // import "../public/styles/style.scss";
 // import "../public/styles/radioToggle.scss";
 

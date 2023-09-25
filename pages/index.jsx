@@ -7,7 +7,6 @@ import { Box, Flex, Text, useColorMode, useColorModeValue } from "@chakra-ui/rea
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { colorMode } = useColorMode();
   const bg = useColorModeValue("gray.50", "gray.900");
   const textCol = useColorModeValue("gray.900", "gray.50");
   let homeScopeStyle = {
