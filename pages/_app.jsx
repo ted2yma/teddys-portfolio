@@ -36,9 +36,10 @@ const App = ({ Component, pageProps }) => {
       <ChakraProvider>
         {/* {isLoading && <Loader />} */}
         <GlobalCtx.Provider value={{ dragging, setDragging }}>
-          <Layout navToggle={navToggle} setNavToggle={setNavToggle}>
+          {/* <Layout navToggle={navToggle} setNavToggle={setNavToggle}>
             <Component {...pageProps} />
-          </Layout>
+          </Layout> */}
+          <Component {...pageProps} />
         </GlobalCtx.Provider>
       </ChakraProvider>
     </>
