@@ -16,10 +16,12 @@ export default function Home() {
     transitionDuration: "normal",
     lineHeight: "base",
     w: `100%`,
-    h: `100vh`,
+    minHeight: `100vh`,
     display: `flex`,
+    flexFlow: `column wrap`,
     justifyContent: `center`,
-    alignItem: `center`
+    alignItem: `center`,
+    p: `2rem`
   };
 
   return (
@@ -30,8 +32,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box as="main" sx={homeScopeStyle} className={styles.main}>
-        <Text as="h1" fontSize={`3rem`} fontWeight={`bold`}>Oh dear! I&apos;m upgrading my website, get back later!</Text>
+      <Box as="main" sx={homeScopeStyle}>
+        <Text as="h1" fontSize={{base: `2.5rem`, lg: `3rem`}} fontWeight={`bold`}>Oh dear! I&apos;m upgrading my website, get back later!</Text>
         <Text as="h1" fontSize={`1.5rem`} my={`1rem`}>唔好意思，你個網壞咗呀，轉頭再返嚟啦！</Text>
         <Text as="h1" fontSize={`2rem`}>網站更新中，稍後再回來吧！</Text>
       </Box>
